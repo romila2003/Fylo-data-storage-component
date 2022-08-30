@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+$gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+$pale-blue: hsl(243, 100%, 93%);
+$grayish-blue: hsl(229, 7%, 55%);
+$dark-blue: hsl(228, 56%, 26%);
+$very-dark-blue: hsl(229, 57%, 11%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: 14px;
+    background-image: url('/images/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 20px;
+
+    @media (min-width: 800px) {
+        background-image: url('/images/bg-desktop.png');
+        background-color: $very-dark-blue;
+        background-size: 100%;
+        background-position: bottom;
+    }
+
+    @media (min-width: 1440px) {
+        background-position: bottom -25% right;
+    }
+}
+
+.container {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+
+    .fylo, .storage {
+        background-color: $dark-blue;
+        box-shadow: 10px 10px 30px hsl(229, 54%, 14%);
+    }
+
+    @media (min-width: 800px) {
+        max-width: 800px;
+        flex-direction: row;
+    }
+}
+
+
+//  FYLO SECTION
+
+.fylo {
+    border-radius: 7px 100px 7px 7px;
+    padding: 2.5em 3em;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 800px) {
+        margin-right: 1em;
+        padding: 2em 6.5em 2em 2em;
+    }
+
+    .logo {
+        padding: 1em 0em 2em 0;
+        width: 60%;
+    }
+
+    .files {
+        display: inline-block;
+    }
+
+    .file {
+        background-color: $very-dark-blue;
+        padding: 0.9em;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .folder, .upload {
+        margin-left: 0.5em;
+    }
+}
+
+// STORAGE SECTION
+
+.storage {
+    margin-top: 1em;
+    padding: 2.5em 2em 5em 2em;
+    border-radius: 7px;
+    color: $pale-blue;
+    position: relative;
+
+    @media (min-width: 800px) {
+        width: 400px;
+        padding: 2em 0.5em 0em 2em;
+        margin-top: 4em;
+    }
+
+    h1 {
+        font-size: 0.9rem;
+        font-weight: 400;
+        text-align: center;
+
+        @media (min-width: 800px) {
+            text-align: left;
+            margin-left: 5px;
+        }
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    .bar {
+        width: 265px;
+        height: 21px;
+        background-color: $very-dark-blue;
+        border-radius: 20px;
+        margin-top: 1em;
+        margin-left: 0.5em;
+        position: relative;
+
+        @media (min-width: 800px) {
+            width: 330px;
+        }
+
+        .color-bar {
+            position: absolute;
+            background: $gradient;
+            width: 200px;
+            height: 15px;
+            bottom: 3px;
+            border-radius: 20px;
+            left: 3px;
+
+            @media (min-width: 800px) {
+                width: 250px;
+            }
+
+            .circle {
+                position: absolute;
+                border-radius: 50%;
+                background-color: $pale-blue;
+                width: 11px;
+                height: 11px;
+                right: 2px;
+                bottom: 2px;
+            }
+        }
+
+        .numbers {
+            display: flex;
+            font-weight: 700;
+            font-size: 0.9rem;
+
+            .one {
+                position: absolute;
+                left: 10px;
+                bottom: -20px;
+            }
+
+            .two {
+                position: absolute;
+                right: 0;
+                bottom: -20px;
+            }
+        }
+    }
+}
+
+// REMAINING STORAGE (185GB LEFT)
+
+.storage-left {
+    position: absolute;
+    background-color: white;
+    border-radius: 7px;
+    width: 180px;
+    height: 70px;
+    bottom: -40px;
+    right: 60px;
+
+    h1 {
+        position: relative;
+        margin-top: 0.3em;
+        margin-right: 2em;
+        text-align: center;
+        font-size: 2.3rem;
+        color: $very-dark-blue; 
+        font-weight: 700;
+
+        span {
+          position: absolute;
+          color: $grayish-blue; 
+          font-weight: 700; 
+          font-size: 0.9rem;
+          bottom: 0.7em;
+          left: 4.7em;
+          width: 100%;
+        }
+    }
+
+    @media (min-width: 800px) {
+        width: 170px;
+        top: -60px;
+        right: 20px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 40px solid white;
+            border-left: 50px solid transparent;
+            right: 0;
+        }
+    }
+}
+
+// FOOTER
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px; 
+    text-align: center;
+    color: $pale-blue;
+    font-family: inherit;
+    font-weight: 900;
+
+    a { 
+        color: $grayish-blue;
+    }
+}

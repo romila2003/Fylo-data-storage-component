@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  font-size: 14px;
+  background-image: url("/images/bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 20px;
+}
+@media (min-width: 800px) {
+  body {
+    background-image: url("/images/bg-desktop.png");
+    background-color: hsl(229deg, 57%, 11%);
+    background-size: 100%;
+    background-position: bottom;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    background-position: bottom -25% right;
+  }
+}
+
+.container {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.container .fylo, .container .storage {
+  background-color: hsl(228deg, 56%, 26%);
+  box-shadow: 10px 10px 30px hsl(229deg, 54%, 14%);
+}
+@media (min-width: 800px) {
+  .container {
+    max-width: 800px;
+    flex-direction: row;
+  }
+}
+
+.fylo {
+  border-radius: 7px 100px 7px 7px;
+  padding: 2.5em 3em;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 800px) {
+  .fylo {
+    margin-right: 1em;
+    padding: 2em 6.5em 2em 2em;
+  }
+}
+.fylo .logo {
+  padding: 1em 0em 2em 0;
+  width: 60%;
+}
+.fylo .files {
+  display: inline-block;
+}
+.fylo .file {
+  background-color: hsl(229deg, 57%, 11%);
+  padding: 0.9em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.fylo .folder, .fylo .upload {
+  margin-left: 0.5em;
+}
+
+.storage {
+  margin-top: 1em;
+  padding: 2.5em 2em 5em 2em;
+  border-radius: 7px;
+  color: hsl(243deg, 100%, 93%);
+  position: relative;
+}
+@media (min-width: 800px) {
+  .storage {
+    width: 400px;
+    padding: 2em 0.5em 0em 2em;
+    margin-top: 4em;
+  }
+}
+.storage h1 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .storage h1 {
+    text-align: left;
+    margin-left: 5px;
+  }
+}
+.storage h1 span {
+  font-weight: 700;
+}
+.storage .bar {
+  width: 265px;
+  height: 21px;
+  background-color: hsl(229deg, 57%, 11%);
+  border-radius: 20px;
+  margin-top: 1em;
+  margin-left: 0.5em;
+  position: relative;
+}
+@media (min-width: 800px) {
+  .storage .bar {
+    width: 330px;
+  }
+}
+.storage .bar .color-bar {
+  position: absolute;
+  background: linear-gradient(to right, hsl(6deg, 100%, 80%), hsl(335deg, 100%, 65%));
+  width: 200px;
+  height: 15px;
+  bottom: 3px;
+  border-radius: 20px;
+  left: 3px;
+}
+@media (min-width: 800px) {
+  .storage .bar .color-bar {
+    width: 250px;
+  }
+}
+.storage .bar .color-bar .circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: hsl(243deg, 100%, 93%);
+  width: 11px;
+  height: 11px;
+  right: 2px;
+  bottom: 2px;
+}
+.storage .bar .numbers {
+  display: flex;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.storage .bar .numbers .one {
+  position: absolute;
+  left: 10px;
+  bottom: -20px;
+}
+.storage .bar .numbers .two {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+}
+
+.storage-left {
+  position: absolute;
+  background-color: white;
+  border-radius: 7px;
+  width: 180px;
+  height: 70px;
+  bottom: -40px;
+  right: 60px;
+}
+.storage-left h1 {
+  position: relative;
+  margin-top: 0.3em;
+  margin-right: 2em;
+  text-align: center;
+  font-size: 2.3rem;
+  color: hsl(229deg, 57%, 11%);
+  font-weight: 700;
+}
+.storage-left h1 span {
+  position: absolute;
+  color: hsl(229deg, 7%, 55%);
+  font-weight: 700;
+  font-size: 0.9rem;
+  bottom: 0.7em;
+  left: 4.7em;
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .storage-left {
+    width: 170px;
+    top: -60px;
+    right: 20px;
+  }
+  .storage-left::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 40px solid white;
+    border-left: 50px solid transparent;
+    right: 0;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: hsl(243deg, 100%, 93%);
+  font-family: inherit;
+  font-weight: 900;
+}
+footer a {
+  color: hsl(229deg, 7%, 55%);
+}/*# sourceMappingURL=style.css.map */
